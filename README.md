@@ -5,7 +5,7 @@ A mobile application (Android or iOS - or both) that allows users to study colle
 ## 用法 USAGE
   在根目录安装依赖包，运行 npm start，打开手机的expo，扫描二维码
 
-  in the root directory of this project, install the packages and run npm start then scan the QR code with expo on you phone.
+  in the root directory of this project, install the packages and run 'npm start'. Then scan the QR code with expo on you phone.
 
 yarn ／ npm install
 
