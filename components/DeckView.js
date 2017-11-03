@@ -9,10 +9,16 @@ class DeckView extends Component {
         deck: this.props.navigation.state.params.deck
     }
     add = () => {
-        const handleAddCardDecks = this.props.navigation.state.params.handleAddCardDecks
+        const {handleAddCardDecks} = this.props.navigation.state.params
         this.props.navigation.navigate('AddCard', {title: this.state.deck.title, handleAddCard: this.getDeck, handleAddCardDecks})
     }
     start = () => {
+        const { deck } = this.state
+
+        if(!(deck.questions && deck.questions.length)) {
+            alert('This deck hasn\'t any cards')
+            return
+        }
         this.props.navigation.navigate('QuizView', {deck: this.state.deck})
     }
     getDeck = () => {

@@ -15,10 +15,9 @@ export default function Card({text, side, handleRotat}) {
 
 const styles = StyleSheet.create({
     textContainer:{
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        height: 500,
+        height: 300,
     },
     text:{
         fontSize:50,
