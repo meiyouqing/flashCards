@@ -3,13 +3,24 @@
 A mobile application (Android or iOS - or both) that allows users to study collections of flashcards. The app will allow users to create different categories of flashcards called "decks", add flashcards to those decks, then take quizzes on those decks.
 
 ## 用法 USAGE
-  在根目录安装依赖包，运行 npm start，打开手机的expo，扫描二维码
 
-  in the root directory of this project, install the packages and run 'npm start'. Then scan the QR code with expo on you phone.
+在根目录安装依赖包，运行 npm start，用安装在手机上的expo扫描二维码
+
+in the root directory of this project, install the packages and run 'npm start'. Then scan the QR code with expo on you phone.
 
 yarn ／ npm install
 
 yarn start ／ npm start
+
+By runing successfully you can see and do this:
+
+ › Press a to open Android device or emulator, or i to open iOS emulator.
+
+ › Press q to display QR code.
+
+ › Press r to restart packager, or R to restart packager and clear cache.
+
+ › Press d to toggle development mode. (current mode: development)
 
 ## 规格 specifications
 
