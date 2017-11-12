@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native'
-import { getDecks } from '../utils/api'
+import { getDecks, setEvent } from '../utils/api'
 import { borderGray, fontGray, white } from '../utils/colors'
+import NoData from './NoData'
 
 class DecksList extends Component {
     state = {
@@ -22,11 +23,7 @@ class DecksList extends Component {
     }
     componentDidMount(){
         this.getDecks()
-    }
-    componentWillReceiveProps(nextProp){
-        if(nextProp.navigation.state.params.update === 'decksList'){
-            this.getDecks()
-        }
+        setEvent('updateDecksList', this.getDecks)
     }
     render(){
         const {decks} = this.state
@@ -44,7 +41,7 @@ class DecksList extends Component {
                             </TouchableOpacity>
                         )
                     })
-                        : <View style={styles.noDataText}><Text>There is no deck yet!</Text></View>
+                        : <NoData note="There is no deck yet!"/>
                     }
                 </ScrollView>
             </View>

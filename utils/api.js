@@ -1,8 +1,12 @@
 import { AsyncStorage } from 'react-native'
 
 const CARDS_KEY = 'UDACICARDS:CARDS'
+const events = {}
 
-//AsyncStorage.clear()
+export function setEvent(event, fun){
+    events[event] = fun
+}
+AsyncStorage.clear()
 export function getDecks() {
     return AsyncStorage.getItem(CARDS_KEY)
         .then(JSON.parse)
@@ -23,6 +27,7 @@ export function addDeck(title) {
                     questions: []
                 }
             }))
+            typeof events.updateDecksList === 'function' && events.updateDecksList()
         })
 }
 
@@ -36,5 +41,6 @@ export function addCardToDeck(title, card) {
                     questions: decks[title].questions.concat([card])
                 }
             }))
+            typeof events.updateDecksList === 'function' && events.updateDecksList()
         })
 }

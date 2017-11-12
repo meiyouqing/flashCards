@@ -8,10 +8,13 @@ class AddDeck extends Component {
         input:''
     }
     add = () => {
-        if(!this.state.input) return
-        addDeck(this.state.input)
+        const { input } = this.state
+        if(!input) return
+
+        addDeck(input)
             .then(() => {
-                this.props.navigation.navigate('Home', {update: 'decksList'})
+                this.props.navigation.navigate('DeckView', {deck: {title: input, questions:[] }})
+                this.setState({input: ''})
             })        
     }
     handleChangeText = (input) =>{
@@ -25,7 +28,7 @@ class AddDeck extends Component {
                     <Text style={styles.title}>of your new</Text>
                     <Text style={styles.title}>deck?</Text>
                 </View>
-                <TextInput style={styles.input} placeholder="Deck Title" onChangeText={this.handleChangeText} />
+                <TextInput style={styles.input} value={this.state.input} placeholder="Deck Title" onChangeText={this.handleChangeText} />
                 <View style={styles.container}>
                     <TouchableOpacity style={styles.submitBtn} onPress={this.add}>
                         <Text style={styles.submitText}>Submit</Text>

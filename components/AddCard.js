@@ -12,16 +12,16 @@ class AddDeck extends Component {
         const {question, answer} = this.state
         if(!question || !answer) return
 
-        const { title, handleAddCard, handleAddCardDecks } = this.props.navigation.state.params
+        const { title, handleAddCard } = this.props.navigation.state.params
 
         addCardToDeck(title, this.state)
             .then(() => {
                 handleAddCard()
-                handleAddCardDecks()
                 this.setState({
                     question:'',
                     answer:'',
                 })
+                this.props.navigation.goBack()
             })        
     }
     handleQueInput = (question) =>{

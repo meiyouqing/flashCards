@@ -2,11 +2,15 @@
 
 A mobile application (Android or iOS - or both) that allows users to study collections of flashcards. The app will allow users to create different categories of flashcards called "decks", add flashcards to those decks, then take quizzes on those decks.
 
+## Licence
+
+Apache 2
+
 ## 用法 USAGE
 
 在根目录安装依赖包，运行 npm start，用安装在手机上的expo扫描二维码
 
-in the root directory of this project, install the packages and run 'npm start'. Then scan the QR code with expo on you phone.
+in the root directory of this project, install the packages and run 'npm start'. Then scan the QR code with [exop](https://expo.io/) on you phone.
 
 yarn ／ npm install
 

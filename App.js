@@ -1,17 +1,10 @@
 import React from 'react';
-import { Text, View, Platform, StatusBar } from 'react-native';
-import { Constants } from 'expo'
+import { Text, View } from 'react-native';
 import MainNavigator from './components/MainNavigator'
 import { black } from './utils/colors'
 import { setLocalNotifications } from './utils/helpers'
+import UdaciStatusBar from './components/StatusBar'
 
-function UdaciStatusBar ({backgroundColor, ...props}) {
-  return (
-    <View style={{ backgroundColor, height: Constants.statusBarHeight }}>
-      <StatusBar translucent backgroundColor={backgroundColor} {...props} />
-    </View>
-  )
-}
 
 export default class App extends React.Component {
   componentDidMount(){
