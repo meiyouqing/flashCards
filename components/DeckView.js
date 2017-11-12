@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet,  Platform } from 'react-native'
 import { getDeck } from '../utils/api'
 import { white, black, fontGray } from '../utils/colors'
-//import { NavigationActions } from 'react-navigation'
+import styles from '../styles'
 
 class DeckView extends Component {
     state = {
@@ -31,9 +31,9 @@ class DeckView extends Component {
         const {deck} = this.state
         return (
             <View style={{flex: 1}}>
-                <View style={styles.deckContainer}>
-                    <Text style={styles.deckTitle}>{ deck.title }</Text>
-                    <Text style={styles.deckInfo}>{ deck.questions && deck.questions.length } cards</Text>
+                <View style={styles.deckDetailContainer}>
+                    <Text style={{fontSize: 50}}>{ deck.title }</Text>
+                    <Text style={{fontSize: 30}}>{ deck.questions && deck.questions.length } cards</Text>
                 </View>
                 <View style={styles.btnContainer}>
                     <TouchableOpacity style={[styles.btn, styles.addBtn]} onPress={this.add}>
@@ -47,44 +47,5 @@ class DeckView extends Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    deckContainer:{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 500,
-    },
-    btnContainer:{
-        flex: 1,
-        alignItems: 'center',
-    },
-    deckTitle:{
-        fontSize:50,
-    },
-    deckInfo:{
-        fontSize:30,
-        color: fontGray,
-    },
-    btn:{
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: Platform.OS === 'ios' ? 285 : 180,
-        height: 50,
-        marginBottom: 20,
-        borderRadius: Platform.OS === 'ios' ? 8 : 3,
-    },
-    addBtn:{
-        backgroundColor: white,
-        borderWidth: 1,
-        borderColor: black,
-    },
-    startBtn:{
-        backgroundColor: black,
-    },
-    btnText:{
-        fontSize: 24,
-    }
-})
 
 export default DeckView

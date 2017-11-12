@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-nati
 import { getDecks, setEvent } from '../utils/api'
 import { borderGray, fontGray, white } from '../utils/colors'
 import NoData from './NoData'
+import styles from '../styles'
 
 class DecksList extends Component {
     state = {
@@ -48,30 +49,5 @@ class DecksList extends Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    noDataText:{
-        flex: 1,
-        height: 300,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    deckContainer:{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 100,
-        borderBottomWidth: 1,
-        borderColor: borderGray,
-        backgroundColor: white,
-    },
-    deckTitle:{
-        fontSize:30,
-    },
-    deckInfo:{
-        fontSize:18,
-        color: fontGray,
-    }
-})
 
 export default DecksList

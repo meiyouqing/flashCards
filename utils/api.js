@@ -6,7 +6,7 @@ const events = {}
 export function setEvent(event, fun){
     events[event] = fun
 }
-AsyncStorage.clear()
+// AsyncStorage.clear()
 export function getDecks() {
     return AsyncStorage.getItem(CARDS_KEY)
         .then(JSON.parse)

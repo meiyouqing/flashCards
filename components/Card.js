@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet} from 'react-native'
 import { white, black, red, green } from '../utils/colors'
+import styles from '../styles'
 
 export default function Card({text, side, handleRotat}) {
     return (
@@ -12,24 +13,3 @@ export default function Card({text, side, handleRotat}) {
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    textContainer:{
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 300,
-    },
-    text:{
-        fontSize:50,
-        textAlign: 'center',
-        //wordBreak: 'break-word',
-    },
-    sideBtn:{
-        marginTop:50
-    },
-    sideText:{
-        fontSize: 24,
-        color: red,
-        fontWeight: 'bold',
-    }
-})
